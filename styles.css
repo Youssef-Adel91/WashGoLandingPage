@@ -82,7 +82,7 @@ body[data-mode] .choose{display:none}
 .choose-card:hover{transform:translateY(-4px)}.choose-card:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
 .choose-card b{font-size:22px;font-weight:800;color:var(--blue)}.choose-card span{color:var(--mut);font-size:15px}
 .choose-card img{border-radius:20px}
-.hero-washer{width:min(100%,460px);margin:0 auto;filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
+.hero-washer{width:min(100%,460px);margin:0 auto;background:radial-gradient(circle at 50% 58%,rgba(8,200,184,.5),rgba(8,200,184,0) 68%);filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
 @media(max-width:560px){.choose-grid{grid-template-columns:1fr}}
 @media(max-width:860px){.hero-in{grid-template-columns:1fr}.hero{padding:28px 0 56px}.booking-card{left:10px;bottom:-26px;min-width:0;width:200px;padding:10px 14px}.grid4{grid-template-columns:repeat(2,1fr)}.sec{padding:48px 0}.btn-cta{width:100%}.hero-visual{margin-bottom:24px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
