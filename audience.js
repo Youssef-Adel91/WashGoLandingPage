@@ -4,11 +4,20 @@
   var KEY = 'washgo_aud';
   var q = new URLSearchParams(location.search);
 
+  // Page title follows the audience (screen readers announce it), so nobody hears an offer that is not meant for them.
+  var TITLES = {
+    home: 'واش جو',
+    shop: 'واش جو — سجل مغسلتك ببلاش واول 3 شهور بدون عمولة',
+    mobile: 'واش جو — ابدأ مغسلتك المتنقلة',
+    user: 'واش جو — غسيل بالبخار لحد باب البيت'
+  };
+
   // ----- who is this visitor? ?w=shop|mobile|user (from a QR) > last choice > ask
   function setMode(m, scroll) {
     body.setAttribute('data-mode', m);
     [].forEach.call(document.querySelectorAll('[data-aud]'), function (el) { el.hidden = el.getAttribute('data-aud') !== m; });
     document.getElementById('switchAud').hidden = false;
+    document.title = TITLES[m] || TITLES.home;
     try { localStorage.setItem(KEY, m); } catch (e) {}
     if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -16,6 +25,7 @@
     body.removeAttribute('data-mode');
     [].forEach.call(document.querySelectorAll('[data-aud]'), function (el) { el.hidden = true; });
     document.getElementById('switchAud').hidden = true;
+    document.title = TITLES.home;
     try { localStorage.removeItem(KEY); } catch (e) {}
     window.scrollTo({ top: 0 });
   }
