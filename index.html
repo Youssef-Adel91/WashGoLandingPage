@@ -34,11 +34,75 @@
     <h1>أهلاً بيك في واش جو</h1>
     <p class="lead-d">اختار الأقرب ليك، ونوريك الخطوات المناسبة.</p>
     <div class="choose-grid">
+      <button type="button" class="choose-card" data-pick="user"><img src="assets/washer.webp" alt="" width="84" height="84"><b>عايز أغسل عربيتي</b><span>غسيل عند البيت أو حجز في مغسلة</span></button>
       <button type="button" class="choose-card" data-pick="shop"><img src="assets/benefit-booking.webp" alt="" width="84" height="84"><b>عندي مغسلة</b><span>عايز حجوزات أونلاين وعملاء أكتر</span></button>
       <button type="button" class="choose-card" data-pick="mobile"><img src="assets/benefit-gear.webp" alt="" width="84" height="84"><b>عايز أبدأ مغسلة متنقلة</b><span>عايز شغل لحسابي وطلبات على موبايلي</span></button>
     </div>
   </div>
 </section>
+<section class="hero" data-aud="user" hidden>
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <span class="badge">لأصحاب العربيات</span>
+      <h1>عربيتك تتغسل<br>وإنت مرتاح</h1>
+      <p class="lead">واش جو هتخليك تطلب غسيل لحد باب البيت، أو تحجز معاد في مغسلة قريبة منك، من موبايلك.</p>
+      <a class="btn btn-cta" href="#register-u" data-track="hero_u_cta">قولنا إيه اللي يناسبك</a>
+      <ul class="perks"><li>غسيل عند البيت</li><li>حجز في مغسلة</li><li>باقات شهرية</li></ul>
+    </div>
+    <div class="hero-visual"><img class="hero-washer" src="assets/washer.webp" alt="غسّال متنقل واقف جنب عربية" width="720" height="632" fetchpriority="high"></div>
+  </div>
+</section>
+
+<section class="sec" id="how-u" data-aud="user" hidden>
+  <div class="wrap narrow">
+    <h2>إزاي هتشتغل؟</h2><p class="sub">التطبيق قريبًا، وإجاباتك بتحدد إيه نبدأ بيه</p>
+    <ol class="steps">
+      <li><span class="num">1</span><div><h3>اختار الأنسب ليك</h3><p>غسيل عند البيت بغسّال بيجيلك، أو حجز معاد في مغسلة قريبة.</p></div></li>
+      <li><span class="num">2</span><div><h3>تابع الطلب</h3><p>تشوف الغسّال في الطريق، وتشوف صور قبل وبعد الغسيل.</p></div></li>
+      <li><span class="num">3</span><div><h3>ادفع وقيّم</h3><p>ادفع من المحفظة أو الكارت، واكسب نقاط على كل غسلة.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec form-sec" id="register-u" data-aud="user" hidden>
+  <div class="wrap narrow">
+    <h2>عايزين نسمع منك</h2><p class="sub">أسئلة سريعة (أقل من دقيقة) علشان نبدأ بالحاجة اللي تفيدك</p>
+    <form id="userForm" class="form" novalidate autocomplete="off">
+      <div class="hp" aria-hidden="true"><label>لا تملأ هذا الحقل<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <fieldset>
+        <div class="f"><span>تفضّل تغسل عربيتك فين؟</span><div class="chips" data-name="preferred_place"><button type="button">غسيل عند البيت</button><button type="button">أحجز في مغسلة</button><button type="button">الاتنين</button><button type="button">حسب الظروف</button></div></div>
+        <div class="f"><span>بتغسل عربيتك كام مرة في الشهر؟</span><div class="chips" data-name="wash_frequency"><button type="button">أقل من مرة</button><button type="button">1–2</button><button type="button">3–4</button><button type="button">أكتر</button></div></div>
+        <div class="f"><span>إيه أهم حاجة عندك؟</span><div class="chips" data-name="top_priority"><button type="button">السعر</button><button type="button">السرعة</button><button type="button">الجودة والثقة</button><button type="button">الراحة</button></div></div>
+        <div class="f"><span>نوع الغسيل المعتاد</span><div class="chips" data-name="wash_type"><button type="button">خارجي</button><button type="button">داخلي وخارجي</button><button type="button">كامل بالتلميع</button></div></div>
+        <div class="f"><span>كام تدفع في الغسيلة الخارجية؟</span><div class="chips" data-name="max_price"><button type="button">أقل من 100 ج</button><button type="button">100–150 ج</button><button type="button">150–250 ج</button><button type="button">أكتر من 250 ج</button></div></div>
+        <div class="f"><span>لو في باقة شهرية بسعر أقل، هتشترك؟</span><div class="chips" data-name="wants_plan"><button type="button">أكيد</button><button type="button">ممكن</button><button type="button">لأ</button></div></div>
+        <label class="f"><span>المحافظة</span>
+          <select name="governorate" required><option value="">اختار</option><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>القليوبية</option><option>الشرقية</option><option>الدقهلية</option><option>الغربية</option><option>المنوفية</option><option>البحيرة</option><option>الإسماعيلية</option><option>بورسعيد</option><option>السويس</option><option>الفيوم</option><option>بني سويف</option><option>المنيا</option><option>أسيوط</option><option>سوهاج</option><option>قنا</option><option>الأقصر</option><option>أسوان</option><option>مدن أخرى</option></select></label>
+        <p class="sub" style="margin:8px 0 0">لو عايز نبلّغك أول ما التطبيق يشتغل في منطقتك (اختياري):</p>
+        <label class="f"><span>اسمك</span><input name="full_name" maxlength="120" placeholder="اختياري"></label>
+        <label class="f"><span>رقم الواتساب</span><input name="phone" type="tel" inputmode="numeric" dir="ltr" maxlength="14" placeholder="01XXXXXXXXX (اختياري)"></label>
+        <label class="check"><input type="checkbox" name="consent"><span>أوافق إن فريق واش جو يتواصل معايا على واتساب لما التطبيق يبقى جاهز.</span></label>
+        <p class="err" role="alert"></p>
+        <button type="submit" class="btn btn-cta" id="submitUser">ابعت إجاباتي</button>
+      </fieldset>
+    </form>
+    <div id="successUser" class="success" hidden tabindex="-1">
+      <img src="assets/washer.webp" alt="" width="180" height="158">
+      <h3>شكرًا ليك!</h3>
+      <p>إجاباتك بتساعدنا نبدأ بالخدمة اللي الناس محتاجاها فعلًا. هنبلّغك لما نجهز لو سيبت رقمك.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq-u" data-aud="user" hidden>
+  <div class="wrap narrow">
+    <h2>أسئلة شائعة</h2>
+    <details><summary>التطبيق نزل؟</summary><p>لسه، بنجهّز للإطلاق. سجّل إجاباتك وسيب رقمك لو حابب نبلّغك.</p></details>
+    <details><summary>لازم أسيب رقمي؟</summary><p>لا. الرقم اختياري، والإجابات بتتسجل من غيره.</p></details>
+    <details><summary>هتبيعوا رقمي لحد؟</summary><p>لا. بنستخدمه بس علشان نبلّغك بخصوص التطبيق.</p></details>
+  </div>
+</section>
+
 <section class="hero" data-aud="shop">
   <div class="wrap hero-in">
     <div class="hero-text">
@@ -249,5 +313,6 @@
 <script src="config.js"></script>
 <script src="app.js"></script>
 <script src="audience.js"></script>
+<script src="user.js"></script>
 </body>
 </html>

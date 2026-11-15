@@ -4,7 +4,7 @@
   var KEY = 'washgo_aud';
   var q = new URLSearchParams(location.search);
 
-  // ----- who is this visitor? ?w=shop|mobile (from a QR) > last choice > ask
+  // ----- who is this visitor? ?w=shop|mobile|user (from a QR) > last choice > ask
   function setMode(m, scroll) {
     body.setAttribute('data-mode', m);
     [].forEach.call(document.querySelectorAll('[data-aud]'), function (el) { el.hidden = el.getAttribute('data-aud') !== m; });
@@ -20,7 +20,7 @@
     window.scrollTo({ top: 0 });
   }
   var start = q.get('w');
-  if (start !== 'shop' && start !== 'mobile') { start = null; }
+  if (start !== 'shop' && start !== 'mobile' && start !== 'user') { start = null; }
   if (start) setMode(start, false);
   document.getElementById('choose').addEventListener('click', function (e) {
     var b = e.target.closest('[data-pick]'); if (b) setMode(b.getAttribute('data-pick'), true);
