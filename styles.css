@@ -89,3 +89,5 @@ body[data-mode] .choose{display:none}
 @media(max-width:860px){.hero-in{grid-template-columns:1fr}.hero{padding:28px 0 56px}.booking-card{left:10px;bottom:-26px;min-width:0;width:200px;padding:10px 14px}.grid4{grid-template-columns:repeat(2,1fr)}.sec{padding:48px 0}.btn-cta{width:100%}.hero-visual{margin-bottom:24px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .choose .narrow{max-width:960px}
+
+.steam-sec{background:linear-gradient(180deg,#EAFBF8,#fff);text-align:center}.steam-ic{margin:0 auto 8px;color:var(--teal-d)}.steam-sec .grid4 .card{text-align:center}.steam-sec .card b{color:var(--blue)}
