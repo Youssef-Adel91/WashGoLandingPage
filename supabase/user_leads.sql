@@ -30,3 +30,8 @@ create policy "anon can insert user leads" on public.user_leads
 -- Handy view for reading the results from the dashboard (SQL editor):
 --   select preferred_place, count(*) from user_leads group by 1 order by 2 desc;
 --   select wants_plan, count(*) from user_leads group by 1 order by 2 desc;
+
+-- name + phone are now mandatory on the page. NOT VALID = old rows without them stay, new rows must have them.
+alter table public.user_leads drop constraint if exists user_leads_contact_required;
+alter table public.user_leads add constraint user_leads_contact_required
+  check (full_name is not null and char_length(btrim(full_name)) >= 2 and phone is not null) not valid;

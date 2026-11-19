@@ -24,13 +24,13 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var f = form.elements;
-    var rawPhone = f.phone.value.trim();
-    var phone = rawPhone ? normPhone(rawPhone) : '';
+    var phone = normPhone(f.phone.value);
     var m = '';
     if (!chosen.preferred_place) m = 'اختار تفضّل تغسل عربيتك فين';
     else if (!f.governorate.value) m = 'اختار المحافظة';
-    else if (rawPhone && !/^01[0125]\d{8}$/.test(phone)) m = 'رقم الواتساب غير صحيح (مثال: 01012345678) أو سيبه فاضي';
-    else if (rawPhone && !f.consent.checked) m = 'علشان نبلّغك لازم توافق إننا نتواصل معاك';
+    else if (f.full_name.value.trim().length < 2) m = 'اكتب اسمك';
+    else if (!/^01[0125]\d{8}$/.test(phone)) m = 'رقم الواتساب غير صحيح (مثال: 01012345678)';
+    else if (!f.consent.checked) m = 'علشان نبلّغك لازم توافق إننا نتواصل معاك';
     errEl.textContent = m; if (m) return;
     if (f.website.value) { done(); return; } // honeypot
     var row = {
@@ -41,9 +41,9 @@
       max_price: chosen.max_price || null,
       wants_plan: chosen.wants_plan || null,
       governorate: f.governorate.value,
-      full_name: f.full_name.value.trim() || null,
-      phone: phone || null,
-      consent: !!phone,
+      full_name: f.full_name.value.trim(),
+      phone: phone,
+      consent: true,
       area: attrib.area, utm_source: attrib.utm_source, utm_campaign: attrib.utm_campaign
     };
     var btn = document.getElementById('submitUser'); btn.disabled = true; btn.textContent = 'جاري الإرسال...';

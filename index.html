@@ -100,10 +100,10 @@
         <div class="f"><span>لو في باقة شهرية بسعر أقل، هتشترك؟</span><div class="chips" data-name="wants_plan"><button type="button">أكيد</button><button type="button">ممكن</button><button type="button">لأ</button></div></div>
         <label class="f"><span>المحافظة</span>
           <select name="governorate" required><option value="">اختار</option><option>القاهرة</option><option>الجيزة</option><option>الإسكندرية</option><option>القليوبية</option><option>الشرقية</option><option>الدقهلية</option><option>الغربية</option><option>المنوفية</option><option>البحيرة</option><option>الإسماعيلية</option><option>بورسعيد</option><option>السويس</option><option>الفيوم</option><option>بني سويف</option><option>المنيا</option><option>أسيوط</option><option>سوهاج</option><option>قنا</option><option>الأقصر</option><option>أسوان</option><option>مدن أخرى</option></select></label>
-        <p class="sub" style="margin:8px 0 0">لو عايز نبلّغك أول ما التطبيق يشتغل في منطقتك (اختياري):</p>
-        <label class="f"><span>اسمك</span><input name="full_name" maxlength="120" placeholder="اختياري"></label>
-        <label class="f"><span>رقم الواتساب</span><input name="phone" type="tel" inputmode="numeric" dir="ltr" maxlength="14" placeholder="01XXXXXXXXX (اختياري)"></label>
-        <label class="check"><input type="checkbox" name="consent"><span>أوافق إن فريق واش جو يتواصل معايا على واتساب لما التطبيق يبقى جاهز.</span></label>
+        <p class="sub" style="margin:8px 0 0">سيب بياناتك علشان نبلّغك أول ما التطبيق يشتغل في منطقتك:</p>
+        <label class="f"><span>اسمك</span><input name="full_name" required maxlength="120" placeholder="الاسم بالكامل"></label>
+        <label class="f"><span>رقم الواتساب</span><input name="phone" type="tel" inputmode="numeric" dir="ltr" required maxlength="14" placeholder="01XXXXXXXXX"></label>
+        <label class="check"><input type="checkbox" name="consent" required><span>أوافق إن فريق واش جو يتواصل معايا على واتساب لما التطبيق يبقى جاهز.</span></label>
         <p class="err" role="alert"></p>
         <button type="submit" class="btn btn-cta" id="submitUser">ابعت إجاباتي</button>
       </fieldset>
